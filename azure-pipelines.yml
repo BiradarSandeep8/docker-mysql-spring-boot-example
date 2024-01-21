@@ -10,7 +10,6 @@ variables:
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   imageName: 'biradarsandeepdockermysqlspringbootexample'
   tag: '$(Build.BuildId)'
-  vmImageName: 'windows-latest'  # Specify the Windows VM image
 
 stages:
 - stage: Build
@@ -18,8 +17,6 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: $(vmImageName)
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
