@@ -8,8 +8,9 @@ variables:
   # Define your Azure Container Registry information
   containerRegistry: 'azuredb2acr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  imageName: 'biradarsandeepdockermysqlspringbootexample'  # Updated image name
+  imageName: 'biradarsandeepdockermysqlspringbootexample'
   tag: '$(Build.BuildId)'
+  vmImageName: 'windows-latest'  # Specify the Windows VM image
 
 stages:
 - stage: Build
